@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Wheels - Capstone Project Cycle 2 - Jakarta | Group 8</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    
+        <nav>
+            <div class="logo">
+                <img src="assets/logo-hitam.png" alt="logo">
+            </div>
+            <div id="menu-icon" class="menu-icon">
+                <i class="ph ph-list"></i>
+            </div>
+            <ul id="menu-list" class="hide">
+                <li><a href="index.html" class="active1">Home</a></li>
+                <li><a href="Our Car.html">Our Car</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        
+
+            <section class="home">
+                <div class="content1">
+                    <div class="home-pic">
+                        <img class="gambar1" src="assets/content1.png"alt="content1">
+                        <img class="gambar2" src="assets/content2.png"alt="content2">
+                    </div>
+                    <div class="home-text">
+                        <h1>Safe and<br>Comfortable Mobility<br>for Your Travel</h1>
+                        <p>Find your ideal car for any trip, we've got your journey covered!</p>
+                        <a  href="#click-reservation"><button class="btn-rent" >
+                        RENT NOW
+                        </button> </a>
+                    </div> 
+                </div>
+                <br><br>
+            </section>
+            <!-- Menu Reservation-->
+            <section class="click-reservation" id="click-reservation">
+                <div class="form-container">
+                    <div class="form-element">
+                        <label for="car-name">SELECT CAR</label>
+                        <div class="car-and-price">
+                        <select class="car-names" id="car-names">
+                            <option label="~Choose Cars~" value="," data-image="assets/default car.png" selected>~Choose Cars~</option>
+                            <option label="New Avanza G M/T" value="New Avanza G M/T,5000" data-image="assets/New Avanza 1.5 G MT.png">New Avanza G M/T</option> 
+                            <option label="Honda Mobillio" value="Honda Mobillio,6000" data-image="assets/Honda Mobilio.png">Honda Mobillio</option> 
+                            <option label="Daihatsu Terios" value="Daihatsu Terios,7000" data-image="assets/Daihatsu New Terios.png">Daihatsu Terios</option> 
+                            <option label="Kijang Inova" value="Kijang Inova,8000" data-image="assets/Kijang Innova.png">Kijang Inova </option>
+                            <option label="Hyundai Stargazer X" value="Hyundai Stargazer X,9000" data-image="assets/Hyundai stargazer.png">Hyundai Stargazer X</option>
+                            <option label="Daihatsu Luxio" value="Daihatsu Luxio,10000" data-image="assets/Daihatsu-Luxio.png">Daihatsu Luxio</option>  
+                            <!--<option  selected>~Choose Cars~</option>
+                            <option value="new avanza g m/t" >New Avanza G M/T</option> 
+                            <option value="honda mobillio">Honda Mobillio</option> 
+                            <option value="daihatsu terios">Daihatsu Terios</option> 
+                            <option value="kijang inova">Kijang Inova </option>
+                            <option value="hyundai stargazer x">Hyundai Stargazer X</option>
+                            <option value="daihatsu luxio">Daihatsu Luxio</option>
+                            -->
+                        </select>
+                        <div class="prices" ><p id="rp">Rp/Day : <span id="price"></span></p></div> 
+                        </div>
+                        <label for="pickupLocation">Pickup Location:</label>
+                    <select id="pickupLocation" name="pickupLocation"> 
+                        <option value="">~Choose Location~</option>
+                        <option value="location1">Delivered Car</option>
+                        <option value="location2">Take It Alone</option>
+                    </select>
+                    </div>
+                    <!-- Options for pickup locations -->
+                    
+                        <!-- Options for Pickup Date -->
+                    <div class="form-element">
+                        <label for="pickupDate">Pickup Date:</label>
+                        <input type="date" id="pickupDate" name="pickupDate">
+                    </div>
+                        <!-- Options for Return Date -->
+                    <div class="form-element">
+                        <label for="returnDate">Return Date:</label>
+                        <input type="date" id="returnDate" name="returnDate">
+                    </div>
+                    <!-- Button Reservatiom -->
+                    <div class="form-button">
+                    <button class="btn-reservation" id="btn-show">CONTINUE TO RESERVATION</button>
+                    </div>
+                </div>
+                <div id="imageContainer">
+                    <img id="carImage" src="/assets/default car.png" alt="Gambar Mobil">
+                </div>
+            </section>
+            <section class="popup-form">
+                <div class="step-reservation">
+                    <p id="SELECTed">SELECT CAR</p>
+                    <p>PERSONAL INFORMATION</p>
+                    <p>RESERVATION DETAIL</p>
+                </div>
+                <div class="step1">
+                        <div class="head-step">
+                            <p>COMPLETE COMPLATE</p>
+                        </div>
+                        <div class="isi-form">
+                            <div class="data">
+                            <label class="data-diri" for="name">NAME</label>
+                            <input class="input-diri" type="text" id="name" placeholder="name">
+                            <label class="data-diri" for="phonenumber">PHONE NUMBER</label>
+                            <input class="input-diri" type="text" id="phonenumber" placeholder="phonenumber">
+                            <label class="data-diri" for="email">EMAIL</label>
+                            <input class="input-diri" type="text" id="email" placeholder="email">
+                            <label class="data-diri" for="adress">ADRESS</label>
+                            <input class="input-diri" type="text" id="adress" placeholder="adress">
+                        </div>
+                            <div class="btn-to-click">
+                                <div class="bttn-form-click">
+                                    
+                                    <button class="btn-back" id="btnback">BACK</button>
+                                </div>
+                                <div class="bttn-form-click">
+                                    <button class="btn-next" id="btnnext">NEXT</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+            </section>
+            <section>
+                <div class="popup-form1">
+                    <div class="step-reservation">
+                        <p id="SELECTed">SELECT CAR</p>
+                        <p id="SELECTed">PERSONAL INFORMATION</p>
+                        <p>RESERVATION DETAIL</p>
+                    </div>
+                    <div class="step2">
+                        <div class="head-step" id="text-resrv"><h1>RESERVATION DETAIL</h1></div>
+                        <div class="confirmed-data">
+                            <div class="detil1">
+                                <p>SELECTED CAR</p>
+                                <img class="img-reserv" src="/assets/Hyundai Stargazer.png" alt="poto">
+                                <p>Hyundai Stargazer</p>
+                            </div>
+                            <div class="detil2">
+                                <p>NAME</p>
+                                <P>PHONE NUMBER</P>
+                                <p>EMAIL</p>
+                                <P>ADDRESS</P>
+                                <hr>
+                                <p>PICKUP LOCATION</p>
+                                <p>PICKUP DATE</p>
+                                <p>RETURN DATE</p>
+                                <div class="button-step2">
+                                    <div class="btn-form-step2">
+                                        
+                                        <button class="btn-step2" id="btn2back">BACK</button>
+                                    </div>
+                                    <div class="btn-form-step2">
+                                        <button class="btn-step2" id="btn2next">CONFIRM</button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="allert-confirm">
+                    <div class="content-allert">
+                        <img class="img-warning" src="/assets/Warning.png" alt="warning">
+                        <h>CONFIRMATION</h>
+                        <p>Are you sure you want to rent this car?</p>
+                        <p>This action cannot be undone.</p>
+                    </div>
+                    <div class="button-step3">
+                        <div class="btn-form-step3">
+                            
+                            <button class="btn-step3" id="btn3back">BACK</button>
+                        </div>
+                        <div class="btn-form-step3">
+                            <button class="btn-step3" id="btn3next">RESERVATE NOW</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="done-confirm">
+                    <div class="done-allert">
+                        <img class="img-checklist" src="/assets/Checklist.png" alt="warning">
+                        <h>SUCCESS</h>
+                        <p>Please check your email for</p>
+                        <p>Reservating detail.</p>
+                        <div class="done-button">
+                            <button class="donebtn" id="done-btn">DONE</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+                           
+                            
+            <section class="sliding-car">
+                <div class="Our-Car">
+                    <h1>OUR CAR</h1>
+                </div>
+                <div class="car-slide">
+                    <div class="Image-slide">
+                        <div class="img-container">
+                            <img class="img1" src="/assets/OUR CAR 1.png" alt="logo">
+                            <img class="img2" src="/assets/OUR CAR 2.png" alt="logo">
+                            <img class="img3" src="/assets/OUR CAR 3.png" alt="logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="see-more" >
+                    <a href="Our Car.html"><h1>SEE MORE</h1></a>
+                </div>
+            </section>            
+           
+            <section class="WhyUs">
+                <div class="judul">
+                    <h1>WHY US?</h1>
+                </div>
+                <div class="isi">
+                    <div class="why-us1">
+                        <img class="icon-gesture" src="assets/icon _gesture.png" alt="icon">
+                        <h1>Easy & Fast Booking</h1>
+                        <p>We understand the value of your time. Our booking process is designed to be quick and hassle-free.
+                        With just a few clicks, you can secure the perfect vehicle for your journey, allowing you to focus more on your travel plans and less on the logistics.</p>
+                    </div>
+                    <div class="why-us2">
+                        <img class="icon-map" src="assets/icon _map.png" alt="icon">
+                        <h1>Flexible Pickup & Return Location</h1>
+                        <p>We believe in providing you with convenience at every step. Choose a pickup and return location that suits your schedule.
+                            Whether you need the car delivered to your doorstep or prefer a specific drop-off point, our flexible options ensure your needs.</p>
+                        
+                    </div>
+                </div>
+                <div class="isi1">
+                    <div class="why-us3">
+                        <img class="icon-clock" src="assets/icon _clock.png" alt="icon">
+                        <h1>24/7 service</h1>
+                        <p>Your travel plans may not always align with regular business hours. That's why our service is available round the clock. 
+                            Whether it's a midnight arrival or an early morning departure, our dedicated team is ready to assist you at any hour.</p>
+                    </div>
+                    <div class="why-us4">
+                        <img class="icon-car" src="assets/icon _Car.png" alt="icon">
+                        <h1>Many Car Selection or Trusworthy Driver</h1>
+                        <p>We understand that every journey is unique, and so are your vehicle preferences.
+                        With many options to choose from, you can select the car that best suits your needs, ensuring a comfortable and enjoyable ride.</p>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <section class="contact">
+                <div>
+                    <img class="logo-orange" src="assets/KIRI-KANAN ORANGE 1.png">
+                </div>
+                <div class="content-contact"> 
+                    <div class="contact-us">
+                        <h1>ABOUT US</h1>
+                        <P>your trusted partner for convenient and enjoyable car rentals in the heart of Yogyakarta. Established with a passion for redefining the travel experience, we prioritize four essential factors that set us apart.</P>
+                    </div>
+                    <div class="media">
+                        
+                        <h1>CONTACT US</h1>
+                        <p class="unline">jogjawheels@gmail.com</p>
+                        <p>+62 809 8765 4321</p>
+                        <p>+62 812 3456 7890</p>
+                    </div>
+                </div>
+                </section>
+            </footer>  
+            
+
+            <script src="js/script.js"></script>            
+        
+</body>
+
+</html>
