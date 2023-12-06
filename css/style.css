@@ -339,6 +339,7 @@ main{
         border: 2px solid ;
         padding-top: 2rem;
         padding-left: 1.2rem;
+        padding-right: 1.2rem;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
@@ -516,8 +517,9 @@ main{
     .form-button {
         height: 65px;
         width: 100%;
-        margin-top: 1rem;
-        padding-left: 0.5rem;
+        
+        padding-left: 0rem;
+        padding-right: 0.5rem;
         
     }
     
@@ -557,7 +559,7 @@ main{
     }
     
     #imageContainer {
-        padding: 1rem 0;
+        padding: 1rem 0rem 3rem 0rem;
         height: auto; /* Menggunakan tinggi otomatis agar menyesuaikan konten */
         width: 100%; /* Maksimalkan lebar pada berbagai ukuran layar */
     }
@@ -680,8 +682,9 @@ main{
     }
 /*--------POP UP FORM--------------*/
 .popup-form{
-    width: 764px;
-    height: 555px;
+    width: 80%;
+    max-width: 764px;
+    height: auto;
     position: fixed;
     top: -150%;
     left: 50%;
@@ -695,6 +698,7 @@ main{
                 opacity 200ms ease-in-out 0ms,
                 transform 200ms ease-in-out 0ms ;
 }
+
 .popup-form.active{
     top: 50%;
     transform: translate(-50%,-50%) scale(1);
@@ -727,9 +731,12 @@ main{
 }
 .head-step{
     background-color: #E1EAEF;
-    
+    padding-left: 1rem;
     height: 50px;
-}.step1{
+}
+
+
+.step1{
     background-color: #FE5722;
     display:grid;
     height: 500px;   
@@ -836,22 +843,11 @@ main{
 }
 @media only screen and (max-width: 768px) {
     .popup-form {
-        display: none;
+       
         width: 90%; /* Sesuaikan lebar sesuai kebutuhan */
-        height: auto; /* Sesuaikan tinggi sesuai kebutuhan */
-        top: 50%; /* Sesuaikan posisi top sesuai kebutuhan */
-        transform: translate(-50%, -50%) scale(1); /* Sesuaikan transform sesuai kebutuhan */
-    
+   
     }
-    .popup-form.active{
-        top: 50%;
-        display: block;
-        transform: translate(-50%,-50%) scale(1);
-        opacity: 1;
-        transition: top 0ms ease-in-out 0ms,
-                    opacity 200ms ease-in-out 200ms,
-                    transform 200ms ease-in-out 200ms ;
-    }
+
     
     .step-reservation {
         column-width: auto; /* Sesuaikan column-width sesuai kebutuhan */
@@ -900,7 +896,7 @@ main{
     }
 
     .head-step{
-       
+        padding-left: 0rem;
         width: 100%;
         height: 50px;
         display: flex;
@@ -929,34 +925,35 @@ main{
         font-size: 14px; /* Sesuaikan ukuran font sesuai kebutuhan */
     }
 }
-.popup-form1{
-    
-    width: 764px;
-    height: 555px;
+.popup-form1 {
+    width: 80%; /* Ubah lebar sesuai kebutuhan responsif */
+    max-width: 764px; /* Tetapkan lebar maksimum */
+    height: auto;
     position: fixed;
     top: -150%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(1.25);
-    background-color:white;
-    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0,15);
+    transform: translate(-50%, -50%) scale(1.25);
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
     border: 3px solid #000;
     border-radius: 10px;
     opacity: 0;
     transition: top 0ms ease-in-out 200ms,
                 opacity 200ms ease-in-out 0ms,
-                transform 200ms ease-in-out 0ms ;
+                transform 200ms ease-in-out 0ms;
 }
 .hidden {
     display: none;
 }
-.popup-form1.active1{
+.popup-form1.active1 {
     top: 50%;
-    transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     transition: top 0ms ease-in-out 0ms,
                 opacity 200ms ease-in-out 200ms,
-                transform 200ms ease-in-out 200ms ;
+                transform 200ms ease-in-out 200ms;
 }
+
 #text-resrv{
     margin-bottom: 3px;
     display: grid;
@@ -966,6 +963,21 @@ main{
 .confirmed-data{
     display: flex;
     flex-direction: row;
+}
+.head-step2{
+    background-color: #E1EAEF;
+    padding-left: 1rem;
+    height: 50px;
+}
+.head-step2>h1{
+    margin-top: 10px;
+    color: #000;
+    font-family: "Roboto", serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+    
 }
 .detil1{
     max-width: 300px;
@@ -983,6 +995,11 @@ main{
     padding: 1rem;
     text-align: center;
 }
+.detil1>h1{
+    padding: 1rem;
+    
+}
+
 .detil2{
     padding-top: 1rem ;
     padding-left: 2rem;
@@ -1033,7 +1050,95 @@ hr{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-
+@media only screen and (max-width: 768px) {
+    .popup-form1 {
+        margin-top: 1rem ;
+        width: 90%; /* Sesuaikan lebar sesuai kebutuhan pada layar kecil */
+    }
+    .popup-form1.active{
+        padding-top: 5rem ;
+    }
+    .head-step2{
+        padding-left: 0rem;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .head-step2>h1{
+        color: #000;
+        font-family: "Roboto", serif;
+        font-size: 5vw;
+        font-style: italic;
+        font-weight: 900;
+        text-align: center;
+        
+    }
+    .confirmed-data{
+        display: flex;
+        flex-direction: column;
+    }
+    .detil1{
+        padding-left: 4rem;
+        max-width: 250px;
+        display: flex;
+        flex-direction: column;
+        
+        padding-top: 1rem ;
+        color: #000;
+        font-family: "Roboto Slab", serif;
+    }.detil1>p{
+        width: auto;
+        padding: 0rem;
+        text-align: center;
+    }
+    .detil1>h1{
+        font-size: 14px;
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+        
+    }
+    hr{
+        width: 300px;
+        margin: 5px 0;
+        color: #000;
+       }
+    
+    
+    .img-reserv {
+        width: 100%; /* Sesuaikan lebar sesuai kebutuhan pada layar kecil */
+        height: auto; /* Biarkan tinggi menyesuaikan proporsi aspek */
+    }
+    .detil2{
+        padding: 1rem;
+        color: #000;
+        font-family: "Roboto Slab", serif;
+        line-height: 1rem;
+        font-size: 13px;
+    }
+    .button-step2{
+        display: flex;
+        width: auto;
+        padding-top: 1rem;
+        padding-left: 0rem;
+        justify-content: space-around;
+    }
+    .btn-step2{
+        width: auto;
+        background-color:  #FE5722;
+        border: none;
+        border-radius:3px ;
+        color:white;
+        padding: 5px 5px 5px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        font-weight: 300;
+        font-family: "Roboto Slab", serif;
+        cursor: pointer;
+    }
+}
 .allert-confirm{
     width: 454px;
     height: 291px;
@@ -1072,7 +1177,7 @@ hr{
     flex-shrink: 0;
     
 }
-.content-allert>h{
+.content-allert>h1{
     color: #000;
     text-align: center;
     font-family: "Roboto Slab", serif;
@@ -1127,7 +1232,22 @@ line-height: normal;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+@media only screen and (max-width: 768px) {
+    .allert-confirm {
+        width: 90%; /* Sesuaikan lebar sesuai kebutuhan pada layar kecil */
+    }
+    .content-allert{
+        padding-bottom: 3rem;
+    }
+    .img-warning {
+        width: 50px; /* Ubah ukuran gambar sesuai kebutuhan pada layar kecil */
+        height: 50px;
+    }
 
+    .btn-step3 {
+        width: 100%; /* Lebar tombol 100% pada layar kecil */
+    }
+}
 .done-confirm{
     width: 454px;
     height: 291px;
@@ -1165,7 +1285,7 @@ line-height: normal;
     flex-shrink: 0;
     
 }
-.done-allert>h{
+.done-allert>h1{
     color: #000;
     text-align: center;
     font-family: "Roboto Slab", serif;
@@ -1213,6 +1333,21 @@ line-height: normal;
     color: white;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+@media only screen and (max-width: 768px) {
+    .done-confirm {
+        height: auto;
+        width: 90%; /* Sesuaikan lebar sesuai kebutuhan pada layar kecil */
+    }
+
+    .img-checklist {
+        width: 50px; /* Ubah ukuran gambar sesuai kebutuhan pada layar kecil */
+        height: 50px;
+    }
+
+    .donebtn {
+        width: 100%; /* Lebar tombol 100% pada layar kecil */
+    }
 }
   /*--------POP UP FORM--------------*/
 

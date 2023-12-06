@@ -6,34 +6,53 @@ menuIcon.addEventListener("click", () => {
 });
 
 document.querySelector("#btn-show").addEventListener("click",function(){
-    document.querySelector(".popup-form").classList.add("active");
+    
+    setTimeout(function () {
+        document.querySelector(".popup-form").classList.add("active");
+    }, 1000); 
 });
 
 document.querySelector(".popup-form .btn-back").addEventListener("click",function(){
-    document.querySelector(".popup-form ").classList.remove("active");
+    setTimeout(function () {
+        document.querySelector(".popup-form").classList.remove("active");
+    }, 500); 
 });
 document.querySelector("#btnnext").addEventListener("click",function(){
-    document.querySelector(".popup-form1").classList.add("active1");
-    document.querySelector(".popup-form").classList.add("hidden");
+    setTimeout(function () {
+         document.querySelector(".popup-form1").classList.add("active1");
+         document.querySelector(".popup-form").classList.add("hidden");
+    }, 500);
+    
 });
 document.querySelector(".popup-form1 #btn2back").addEventListener("click",function(){
-    document.querySelector(".popup-form1").classList.remove("active1");
-    document.querySelector(".popup-form").classList.remove("hidden");
+    setTimeout(function () {
+        document.querySelector(".popup-form1").classList.remove("active1");
+        document.querySelector(".popup-form").classList.remove("hidden");
+   }, 500);
+    
     
 });
 document.querySelector("#btn2next").addEventListener("click",function(){
-    document.querySelector(".allert-confirm").classList.add("active1");
-    document.querySelector(".popup-form1").classList.add("hidden");
-
+    setTimeout(function () {
+        document.querySelector(".allert-confirm").classList.add("active1");
+        document.querySelector(".popup-form1").classList.add("hidden");
+   }, 500);
+   
 });
 document.querySelector(".allert-confirm #btn3back").addEventListener("click",function(){
-    document.querySelector(".allert-confirm").classList.remove("active1");
-    document.querySelector(".popup-form1").classList.remove("hidden");
+    setTimeout(function () {
+        document.querySelector(".allert-confirm").classList.remove("active1");
+        document.querySelector(".popup-form1").classList.remove("hidden");
+   }, 500);
+    
     
 });
 document.querySelector("#btn3next").addEventListener("click",function(){
-    document.querySelector(".done-confirm").classList.add("active1");
-    document.querySelector(".allert-confirm").classList.add("hidden");
+    setTimeout(function () {
+        document.querySelector(".done-confirm").classList.add("active1");
+        document.querySelector(".allert-confirm").classList.add("hidden");
+   }, 3000);
+    
 });
 document.querySelector("#done-btn").addEventListener("click",function(){
     document.querySelector(".done-confirm").classList.remove("active1");
