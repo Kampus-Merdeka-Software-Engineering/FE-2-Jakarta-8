@@ -99,7 +99,7 @@ main{
     height: 200px;
 }
 .bg-tengah{
-    background-image: url('./assets/BG-our-car.png');
+    background-image: url('assets/BG-our-car.png');
     height: 300px;
     width: auto;
     
