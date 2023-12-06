@@ -263,7 +263,7 @@ main{
 
 .ContentAbout3 {
     height: auto; /* Menggunakan tinggi otomatis agar menyesuaikan konten */
-    background-image: url('/assets/about-us-pic.png');
+    background-image: url('./assets/about-us-pic.png');
     background-size: cover;
     background-position: center;
     padding: 4rem; /* Mengurangi padding agar lebih responsif */
@@ -302,7 +302,7 @@ main{
 @media (max-width: 768px) {
     .ContentAbout3 {
         height: auto; /* Menggunakan tinggi otomatis agar menyesuaikan konten */
-        background-image: url('/assets/about-us-pic.png');
+        background-image: url('./assets/about-us-pic.png');
         padding: 1rem; /* Mengurangi padding agar lebih responsif */
         max-width: 100%; /* Maksimalkan lebar pada berbagai ukuran layar */
         box-sizing: border-box; /* Menangani perhitungan kotak secara tepat */
