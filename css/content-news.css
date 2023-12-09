@@ -1,0 +1,97 @@
+.kuliner1{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 4rem;
+    gap: 4rem;
+}
+.container-kuliner1{
+    padding: 10vh 20vw;
+}
+.head-kuliner1{
+       padding: 1rem; 
+       font-size: larger;
+       text-align: center;
+}
+
+.imghead{
+    max-width: 361px;
+    height: auto;
+    width: 100%;
+}
+.text-kuliner1{
+    line-height: 2rem;
+    padding: 0rem 5rem 0rem 5rem;
+}
+.text-kuliner1>h1{
+    line-height: 8rem;
+    font-size: 3vh;
+}
+.text-kuliner1>p{
+    text-align: justify;
+    font-size:2vh ;
+}
+.btn-back-news{
+    display: flex;
+    justify-content: center;
+    padding : 3rem;
+}
+.back-news{
+    width: auto;
+    background-color:chocolate;
+    border: none;
+    border-radius:3px ;
+    color:white;
+    margin-top: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: "Roboto Slab", serif;
+    cursor: pointer;
+}
+.back-news:hover {
+    background-color: #FE5722;
+    color: black;
+}
+.back-news:active {
+    background-color: black;
+    color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+@media screen and (max-width: 768px) {
+    .kuliner1 {
+        padding: 2rem; /* Adjusted padding for smaller screens */
+    }
+
+    .container-kuliner1 {
+        padding: 10vh 2vw; /* Adjusted padding for smaller screens */
+    }
+    .head-kuliner1{
+        
+    }
+    .text-kuliner1 {
+        padding: 0rem 2vw; /* Adjusted padding for smaller screens */
+        line-height: 1rem;
+    }
+
+    .text-kuliner1 > h1 {
+        padding-top: 1rem;
+        line-height: 2rem;
+        font-size: 5vw; /* Adjusted font size for smaller screens */
+    }
+
+    .text-kuliner1 > p {
+        font-size: 3vw; /* Adjusted font size for smaller screens */
+    }
+
+    .back-news {
+        font-size: 3vw; /* Adjusted font size for smaller screens */
+        padding: 1rem 1.5rem; /* Adjusted padding for smaller screens */
+    }
+}

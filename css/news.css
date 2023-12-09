@@ -88,7 +88,107 @@ main{
     
 }
 /*----------------------BAGIAN NAVBAR-----------------------------*/
+.info-news{
+    display: flex;
+    flex-direction: column;
+    padding: 7rem 7rem 4rem 7rem;
+}
 
+.content-news>h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Slab', sans-serif;
+    padding: 3rem;
+    font-size: 5vh;
+    font-style: italic;
+    font-weight: 900;
+}
+.rekomendasi{
+    margin-bottom: 3rem;
+    padding: 4rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.img-kuliner1 {
+    max-width: 361px;
+    height: auto;
+    width: 100%;
+}
+.content-in-news{
+    height: 100%;
+    display: flex;
+   
+    flex-direction: column;
+    font-family: 'Roboto Slab', sans-serif;
+    padding-left: 2rem;
+    overflow: auto;
+    gap: 1.5rem;
+}
+.content-in-news > h1 {
+    max-width: auto;
+    font-family: 'Roboto Slab', sans-serif;
+    margin-bottom: 1rem;
+}
+.read-more{
+    display: flex;
+    justify-content: center;
+    
+}
+.img-kuliner2 {
+    max-width: 361px;
+    height: auto;
+    width: 100%;
+}
+.img-wisata1 {
+    max-width: 361px;
+    height: auto;
+    width: 100%;
+}
+.img-wisata2 {
+    max-width: 361px;
+    height: auto;
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .info-news {
+        padding: 4rem 1rem; /* Adjusted padding for smaller screens */
+    }
+
+    .content-news > h1 {
+        padding: 2rem; /* Adjusted padding for smaller screens */
+        font-size: 4vh; /* Adjusted font size for smaller screens */
+    }
+    
+    .rekomendasi{
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .content-in-news{
+        height: auto;
+        display: flex;
+       text-align: justify;
+        flex-direction: column;
+        font-family: 'Roboto Slab', sans-serif;
+        padding: 1rem;
+        overflow: auto;
+        gap: 0.5rem;
+    }
+    .content-in-news >p {
+        max-width: auto;
+        font-family: 'Roboto Slab', sans-serif;
+        margin-bottom: 0.5rem;
+        font-size: 14px;
+    }
+}
 /* -------Tampilan FOOTER-------------*/
 .contact {
     max-width: auto;
@@ -143,7 +243,6 @@ main{
     padding-bottom: 1rem;
     
 }
-
 
 
 /* Media queries for responsiveness */
