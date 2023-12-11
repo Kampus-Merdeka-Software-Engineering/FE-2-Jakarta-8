@@ -112,8 +112,12 @@ async function showReservation() {
         const dtlConfirmed = await respon.json();
         console.log(dtlConfirmed);
 
+        dtlConfirmed.sort((a, b) => b.id - a.id);
+
+        // Ambil data terbaru dari array
+        
         // Ambil data terakhir dari array
-        const latestReservation = dtlConfirmed.pop();
+        const latestReservation = dtlConfirmed[0];
 
         const reservationContent = `
             <div class="detil1">
@@ -132,12 +136,7 @@ async function showReservation() {
                 <p>PICKUP DATE : ${latestReservation.pickup_date}</p>
                 <p>RETURN DATE : ${latestReservation.return_date}</p>
                 <div class="button-step2">
-                    <div class="btn-form-step2">
-                        <button class="btn-step2" id="btn2back">BACK</button>
-                    </div>
-                    <div class="btn-form-step2">
-                        <button class="btn-step2" id="btn2next">CONFIRM</button>
-                    </div>
+                    
                 </div>
             </div>`;
 
@@ -147,3 +146,50 @@ async function showReservation() {
     }
 }
 showReservation();
+
+async function showCar() {
+    const ourCar = document.getElementById("kolom-mobil");
+    try {
+        const response = await fetch('http://localhost:3000/car');
+        const dataCars = await response.json();
+        
+        // Loop melalui setiap mobil dan tambahkan ke dalam "kolom-mobil"
+        dataCars.forEach(car => {
+            const carElement = document.createElement('div');
+            carElement.classList.add('kolom-mobil');
+
+            carElement.innerHTML = `
+                <div>
+                    <img class="gambar-car" src="${car.img_car}" alt="${car.name_car}">
+                </div>
+                <div class="merk">
+                    <h1>${car.name_car}</h1>
+                    <div class="spec">
+                        <div class="ketentuan">
+                            <p>POWER</p>
+                            <p>SEATS</p>
+                            <P>TRANSMISSION</p>
+                            <p>COLOR</p>
+                        </div>
+                        <div class="spesifikasi">
+                            <p>: ${car.power}</p>
+                            <p>: ${car.seat}</p>
+                            <P>: ${car.transsmision}</p>
+                            <p>: ${car.color}</p>
+                        </div>
+                    </div>
+                    <div class="price-rent">
+                        <p>Rp ${car.price}/Day</p>
+                    </div>
+                </div>
+            `;
+
+            ourCar.appendChild(carElement);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Panggil fungsi showCar untuk menampilkan data mobil
+showCar();

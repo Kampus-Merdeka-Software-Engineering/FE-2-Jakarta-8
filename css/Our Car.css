@@ -119,19 +119,22 @@ main{
 } 
             
 /* -------Tampilan DAFTAR MOBIL-------------*/
-.kotak-mobil{
-    height: 100%;
-    max-width: auto;
+.kotak-mobil {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(406px, 1fr));
-    
-    padding: 4rem 0rem 4rem 0rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Sesuaikan lebar minimum dan maksimum */
+    gap: 2rem; /* Atur jarak antar elemen */
+    margin: auto;
+    padding: 4rem 2rem;
 }
-.jenis-mobil{
-    max-width: auto;
-    display: grid;
-    flex-direction: column;
-    justify-content: center;
+
+.jenis-mobil {
+    max-width: 100%; /* Agar elemen tidak melebihi parent-nya */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center; /* Pusatkan elemen secara horizontal */
+   
+    gap: 1.5rem;
 }
 .gambar-car{
     width: 405px;
