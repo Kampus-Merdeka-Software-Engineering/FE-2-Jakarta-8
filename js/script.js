@@ -74,6 +74,6 @@ biggestCats.onchange = function(){
     var optionValues = selectedOption.value.split(',');
     var imageSrc = selectedOption.getAttribute("data-image");
     // Mengupdate teks dengan nama mobil
-    total.innerText = parseInt(optionValues[1]);
+    total.innerText = parseInt(optionValues[1])
     carImage.src = imageSrc;
 }
