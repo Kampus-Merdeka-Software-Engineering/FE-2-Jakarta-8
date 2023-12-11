@@ -259,72 +259,7 @@ button:hover {
   
 
 /* -------Tampilan FOOTER-------------*/
-/*.contact{
-    width: 100%;
-    
-    background-color: black;
-    padding : 3rem 5rem 2rem 5rem;
-    
-}
 
-.logo-orange{
-    padding-left: 1rem;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
-.content-contact{
-    display: flex;
-    justify-content:space-between;
-    padding-top: 2rem;
-}
-.contact-us{
-    padding-left: 3rem;
-    height: 100px;
-    width: 600px;
-    color: white;
-}
-.contact-us>h1{
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 1rem;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-style: italic;
-    padding-bottom: 1rem;
-}
-.contact-us>p{
-    font-size: 20px;
-    font-family: "poppins";
-
-}
-.media{
-    color: white;
-    font-size: 20px;
-    
-    height: 100px;
-    width: 500px;
-    
-   
-}
-.media>h1{
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 1rem;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-style: italic;
-    padding-bottom: 1rem;
-}
-.media>p{
-    
-    line-height: 3rem;
-    font-family: "poppins";
-    font-style:normal;
-}
-
-#uline{
-    text-decoration: underline;
-}*/
 /* -------Tampilan FOOTER-------------*/
 .contact {
     max-width: auto;
