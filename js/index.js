@@ -12,86 +12,138 @@ getDataFromBackend();
 
 
 
-$(document).ready(function() {
-    $("#btn-show").on("click", function() {
-        // Get form data
-        const selectedCar = $("#car-names").val();
-        const pickupLocation = $("#pickupLocation").val();
-        const pickupDate = $("#pickupDate").val();
-        const returnDate = $("#returnDate").val();
+getDataFromBackend = async() =>{
+    try{
+        const res = await fetch('http://localhost:3000/reservation');
+        const data = await res.json();
+        console.log(data)
+    } catch (error){
+        alert(error);
+    }
+};
+getDataFromBackend();
 
-        // You can add more validation if needed
+async function createReservation(){
+    const select_car = document.getElementById("car-names").value;
+    const total = parseInt(document.getElementById("total").innerText);
+    const pickup_location = document.getElementById("pickupLocation").value;
+    const pickup_dateString = document.getElementById("pickupDate").value;
+    const pickup_date = new Date(pickup_dateString);
+    const return_dateString = document.getElementById("returnDate").value;
+    const return_date = new Date(return_dateString);
+    const name = document.getElementById("name").value;
+    const phone_number = parseInt(document.getElementById("phonenumber").value);
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("adress").value;
 
-        // Prepare data for submission
-        const formData = {
-            car: selectedCar,
-            location: pickupLocation,
-            pickupDate: pickupDate,
-            returnDate: returnDate
-        };
-
-        // Send data to the server using AJAX (assumes the server endpoint is "/submit")
-        $.ajax({
-            type: "POST",
-            url: "http:localhost:3000/reservation", // Change this to your server endpoint
-            data: formData,
-            success: function(response) {
-                // Handle success (e.g., show a success message)
-                console.log("Form submitted successfully:", response);
-            },
-            error: function(error) {
-                // Handle error (e.g., show an error message)
-                console.error("Error submitting form:", error);
-            }
+    try {
+        await fetch('http://localhost:3000/reservation',{
+            method : 'POST',
+            headers : {'Content-Type':'application/json'},
+            body : JSON.stringify({
+                select_car, 
+                total, 
+                pickup_location, 
+                pickup_date: pickup_date.toISOString(), 
+                return_date: return_date.toISOString(),
+                name,
+                phone_number,
+                email,
+                address,
+            }),
         });
+        alert('Reservation Success');
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
+
+
+
+/*async function showReservation() {
+    const confirmed_data = document.getElementById("confirmed-data");
+    try {
+      const respon = await fetch('http://localhost:3000/reservation');
+      const dtlConfirmed = await respon.json();
+      console.log(dtlConfirmed);
+  
+      const reservationContent = dtlConfirmed.map((item) => {
+        return `
+        <div class="detil1">
+                                <p>SELECTED CAR</p>
+                                <img class="img-reserv" src="./assets/Hyundai Stargazer.png" alt="poto">
+                                <p>${item.select_car}</p>
+                                <h1>Rp : ${item.total}</h1>
+                            </div>
+                            <div class="detil2">
+                                <p>NAME : ${item.name}</p>
+                                <P>PHONE NUMBER : ${item.phone_number}</P>
+                                <p>EMAIL : ${item.email}</p>
+                                <P>ADDRESS : ${item.address}</P>
+                                <hr>
+                                <p>PICKUP LOCATION : ${item.pickup_location}</p>
+                                <p>PICKUP DATE : ${item.pickup_date}</p>
+                                <p>RETURN DATE : ${item.return_date}</p>
+                                <div class="button-step2">
+                                    <div class="btn-form-step2">
+                                        <button class="btn-step2" id="btn2back">BACK</button>
+                                    </div>
+                                    <div class="btn-form-step2">
+                                        <button class="btn-step2" id="btn2next">CONFIRM</button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+       `;
     });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Fetch data from the server endpoint (replace '/api/cars' with your actual endpoint)
-    fetch('/api/cars')
-        .then(response => response.json())
-        .then(data => {
-            // Process the data and populate the HTML
-            const carListContainer = document.getElementById('carListContainer');
+    confirmed_data.innerHTML = reservationContent;
+  } catch (error) {
+    console.log(error);
+  }
+}
+showReservation();*/
+async function showReservation() {
+    const confirmed_data = document.getElementById("confirmed-data");
+    try {
+        const respon = await fetch('http://localhost:3000/reservation');
+        const dtlConfirmed = await respon.json();
+        console.log(dtlConfirmed);
 
-            data.forEach(car => {
-                const carElement = document.createElement('div');
-                carElement.classList.add('jenis-mobil');
+        // Ambil data terakhir dari array
+        const latestReservation = dtlConfirmed.pop();
 
-                carElement.innerHTML = `
-                    <div>
-                        <img class="gambar-car" src="${car.image}" alt="${car.name}">
+        const reservationContent = `
+            <div class="detil1">
+                <p>SELECTED CAR</p>
+                <img class="img-reserv" src="./assets/Hyundai Stargazer.png" alt="poto">
+                <p>${latestReservation.select_car}</p>
+                <h1>Rp : ${latestReservation.total}</h1>
+            </div>
+            <div class="detil2">
+                <p>NAME : ${latestReservation.name}</p>
+                <P>PHONE NUMBER : ${latestReservation.phone_number}</P>
+                <p>EMAIL : ${latestReservation.email}</p>
+                <P>ADDRESS : ${latestReservation.address}</P>
+                <hr>
+                <p>PICKUP LOCATION : ${latestReservation.pickup_location}</p>
+                <p>PICKUP DATE : ${latestReservation.pickup_date}</p>
+                <p>RETURN DATE : ${latestReservation.return_date}</p>
+                <div class="button-step2">
+                    <div class="btn-form-step2">
+                        <button class="btn-step2" id="btn2back">BACK</button>
                     </div>
-                    <div class="merk">
-                        <h1>${car.name}</h1>
-                        <div class="spec">
-                            <div class="ketentuan">
-                                <p>POWER</p>
-                                <p>SEATS</p>
-                                <P>TRANSMISSON</p>
-                                <p>COLOR</p>
-                            </div>
-                            <div class="spesifikasi">
-                                <p>: ${car.power}</p>
-                                <p>: ${car.seats} kursi</p>
-                                <P>: ${car.transmission}</p>
-                                <p>: ${car.color.join(', ')}</p>
-                            </div>
-                        </div>
-                        <div class="price-rent">
-                            <p>Rp ${car.price}/Day </p>
-                            <a href="${car.rentLink}">
-                                <button class="click-rent">
-                                    RENT THIS CAR
-                                </button>
-                            </a>
-                        </div>
+                    <div class="btn-form-step2">
+                        <button class="btn-step2" id="btn2next">CONFIRM</button>
                     </div>
-                `;
+                </div>
+            </div>`;
 
-                carListContainer.appendChild(carElement);
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
-});
+        confirmed_data.innerHTML = reservationContent;
+    } catch (error) {
+        console.log(error);
+    }
+}
+showReservation();

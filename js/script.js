@@ -65,15 +65,15 @@ document.querySelector("#done-btn").addEventListener("click",function(){
     document.querySelector(".done-confirm").classList.remove("hidden");
 });
 var biggestCats = document.getElementById("car-names");
+var total = document.getElementById("total");
 var carImage = document.getElementById("carImage");
 
 biggestCats.onchange = function(){
-    price.innerText = this.value[1];
+    total.innerText = this.value[1];
     var selectedOption = this.options[this.selectedIndex];
     var optionValues = selectedOption.value.split(',');
     var imageSrc = selectedOption.getAttribute("data-image");
     // Mengupdate teks dengan nama mobil
-    price.innerText = optionValues[1];
+    total.innerText = parseInt(optionValues[1]);
     carImage.src = imageSrc;
 }
-
