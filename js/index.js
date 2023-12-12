@@ -25,6 +25,7 @@ getDataFromBackend();
 
 async function createReservation(){
     const select_car = document.getElementById("car-names").value;
+    
     const total = parseInt(document.getElementById("total").innerText);
     const pickup_location = document.getElementById("pickupLocation").value;
     const pickup_dateString = document.getElementById("pickupDate").value;
@@ -52,7 +53,6 @@ async function createReservation(){
                 address,
             }),
         });
-        alert('Reservation Success');
     } catch (error) {
         console.log(error);
         
@@ -114,9 +114,7 @@ async function showReservation() {
 
         dtlConfirmed.sort((a, b) => b.id - a.id);
 
-        // Ambil data terbaru dari array
-        
-        // Ambil data terakhir dari array
+
         const latestReservation = dtlConfirmed[0];
 
         const reservationContent = `
@@ -146,6 +144,8 @@ async function showReservation() {
     }
 }
 showReservation();
+
+
 
 async function showCar() {
     const ourCar = document.getElementById("kolom-mobil");
